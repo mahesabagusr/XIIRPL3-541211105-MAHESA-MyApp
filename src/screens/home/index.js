@@ -50,7 +50,7 @@ export default function Home({ navigation }) {
         <Text style={styles.heading1}>Mahesa bagus Raditya</Text>
         <Text style={styles.paragraph}> Hello!
           I am Mahesa Bagus Raditya, and welcome to my Digital CV, Now I am a Student of SMK Telkom Purwokerto majoring in Software Engineering, I have several things that I am interested in, one of which is UI/UX and Programming, and my motto is I want to learn more and more about world of technology</Text>
-        <ButtonMain style={{ marginTop: -32 }} title='See More' />
+        <ButtonMain title='See More' />
         <Text style={styles.heading2}>My Recents Project</Text>
         {
           data.map((item) => {

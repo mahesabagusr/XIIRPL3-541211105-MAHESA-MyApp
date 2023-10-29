@@ -1,6 +1,6 @@
 import React, { useState, useLayoutEffect } from 'react';
 import { Text, View, SafeAreaView, StyleSheet, Image, Button, Alert, TouchableOpacity, ScrollView } from 'react-native';
-import { ButtonCircle,LikeButton } from '../../atomics';
+import { ButtonCircle, LikeButton, DislikeButton } from '../../atomics';
 
 function ProjectCard({ img, title, desc, onpress }) {
   return (
@@ -12,7 +12,10 @@ function ProjectCard({ img, title, desc, onpress }) {
             <Text style={styles.title}>{title}</Text>
             <Text style={styles.desc}>{desc}</Text>
           </View>
-          <LikeButton/>
+          <View style={{justifyContent:'space-between', flexDirection:'row'}}>
+            <DislikeButton />
+            <LikeButton />
+          </View>
           <ButtonCircle onPress={onpress} />
         </View>
       </View>
