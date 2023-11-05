@@ -1,14 +1,9 @@
 import { Text, View, SafeAreaView, StyleSheet, Image, Button, Alert, TouchableOpacity, ScrollView, TextInput, Pressable } from 'react-native';
-import React, { useState, useLayoutEffect } from 'react';
+import React, { useState, useLayoutEffect, useEffect } from 'react';
 import Icon from 'react-native-vector-icons/AntDesign';
 import { ButtonMain, ButtonSecond, FormText, FormPassword, TextLink } from '../../components/atomics';
 
 export default function Register({ navigation }) {
-  useLayoutEffect(() => {
-    navigation.setOptions({
-      headerLeft: null,
-    });
-  }, [navigation]);
 
   return (
     <ScrollView>
@@ -39,10 +34,6 @@ export default function Register({ navigation }) {
     </ScrollView >
   )
 }
-
-Register.options = {
-  headerLeft: null, // or headerShown: false
-};
 
 const styles = StyleSheet.create({
   container: {

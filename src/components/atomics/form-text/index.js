@@ -2,12 +2,12 @@ import { Text, View, SafeAreaView, StyleSheet, Image, Button, Alert, TouchableOp
 import react, { useState } from 'react';
 
 function FormText({ title, value, onChangeText }) {
-
   return (
     <View style={styles.formContainer}>
       <TextInput
         style={styles.input}
         onChangeText={onChangeText}
+        autoCapitalize='none'
         value={value}
         placeholder={title}
       />

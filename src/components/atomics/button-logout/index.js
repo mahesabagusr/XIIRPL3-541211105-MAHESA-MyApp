@@ -2,6 +2,7 @@ import { Text, View, SafeAreaView, StyleSheet, Image, Button, Alert, TouchableOp
 import React from 'react'
 
 function ButtonLogout({ title, onPress }) {
+  
   return (
     <TouchableOpacity style={styles.buttonContainer} onPress={onPress}>
       <Text style={styles.buttonText}>{title}</Text>
@@ -9,22 +10,21 @@ function ButtonLogout({ title, onPress }) {
   )
 }
 
-export { ButtonLogout } 
+export { ButtonLogout }
 
 const styles = StyleSheet.create({
   buttonContainer: {
     alignItems: 'center',
     justifyContent: 'center',
-    paddingVertical: 16,
-    paddingHorizontal: 32,
-    borderRadius: 10,
-    backgroundColor: 'red',
-    borderWidth: 0.5,
-    borderColor: 'grey',
+    paddingVertical: 8,
+    paddingHorizontal: 16,
+    borderRadius: 4,
+    backgroundColor: '#dc3545',
+    marginRight: 10,
   },
   buttonText: {
     fontSize: 16,
     fontWeight: 'medium',
-    color: 'black'
+    color: 'white'
   },
 })
