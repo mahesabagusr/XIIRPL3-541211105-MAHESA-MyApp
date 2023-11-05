@@ -12,7 +12,7 @@ function ProjectCard({ img, title, desc, onpress }) {
             <Text style={styles.title}>{title}</Text>
             <Text style={styles.desc}>{desc}</Text>
           </View>
-          <View style={{justifyContent:'space-between', flexDirection:'row'}}>
+          <View style={{ justifyContent: 'space-between', flexDirection: 'row' }}>
             <DislikeButton />
             <LikeButton />
           </View>
@@ -27,10 +27,11 @@ export { ProjectCard }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    // flex: 1,
     padding: 12,
     marginTop: 16,
-
+    backgroundColor: 'white',
+    borderRadius: 15,
   },
   image: {
     width: '100%',
@@ -62,7 +63,7 @@ const styles = StyleSheet.create({
     textAlign: 'left',
     fontWeight: 'semibold',
     justifyContent: 'center',
-    fontSize: 16,
+    fontSize: 14,
   }
 
 })

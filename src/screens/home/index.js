@@ -1,14 +1,24 @@
 import { Text, View, SafeAreaView, StyleSheet, Image, Button, Alert, TouchableOpacity, ScrollView } from 'react-native';
 import React, { useState, useLayoutEffect } from 'react';
 import { ProjectCard } from '../../components/organism';
+import { StackActions } from '@react-navigation/native';
 import { ButtonLogout, ButtonMain } from '../../components/atomics';
 
 export default function Home({ navigation }) {
-  useLayoutEffect(() => {
-    navigation.setOptions({
-      headerLeft: null,
-    });
-  }, [navigation]);
+  // const logoutHandler = () => {
+  //   Alert.alert('Logout Berhasil');
+  //   navigation.dispatch(StackActions.replace('Login'))
+  // }
+
+  // React.useEffect(() => {
+  //   navigation.setOptions({
+  //     headerRight: () => {
+  //       return (
+  //         <ButtonLogout title='Logout' onPress={logoutHandler} />
+  //       )
+  //     }
+  //   })
+  // })
 
   const data = [
     {
@@ -64,7 +74,6 @@ export default function Home({ navigation }) {
   )
 }
 
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -72,32 +81,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#ecf0f1',
     paddingTop: 50,
     padding: 30,
-
-  },
-  projectContainer: {
-    flex: 1,
-    padding: 12,
-  },
-  descContainer: {
-    flex: 1,
-    maxHeight: 70,
-    // maxWidth: 100,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
-  textContainer: {
-    flex: 1,
-    maxHeight: 120,
-    maxWidth: 220,
-  },
-  buttonContainer: {
-    justifyContent: 'center',
-    backgroundColor: '#3498db',
-    marginTop: 10,
-    padding: 15,
-    maxHeight: 60,
-    maxWidth: 60,
-    borderRadius: 200,
   },
   heading1: {
     color: 'black',

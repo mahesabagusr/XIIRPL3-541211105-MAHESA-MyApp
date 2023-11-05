@@ -2,8 +2,7 @@ import { Text, View, SafeAreaView, StyleSheet, Image, Button, Alert, TouchableOp
 import react, { useState } from 'react';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-function FormPassword({ title }) {
-  const [text, setText] = useState('');
+function FormPassword({ title, value, onChangeText }) {
   const [showPassword, setShowPassword] = useState(false);
 
   const toggleShowPassword = () => {
@@ -14,8 +13,9 @@ function FormPassword({ title }) {
     <View style={styles.formContainer}>
       <TextInput
         style={styles.input}
-        onChangeText={setText}
-        value={text}
+        onChangeText={onChangeText}
+        autoCapitalize='none'
+        value={value}
         placeholder={title}
         secureTextEntry={!showPassword ? true : false}
       />

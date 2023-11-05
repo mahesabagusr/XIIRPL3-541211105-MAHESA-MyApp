@@ -1,5 +1,6 @@
-import { Text, View, SafeAreaView, StyleSheet, Image, Button, Alert, TouchableOpacity, ScrollView, TextInput, Pressable } from 'react-native';
+import { Text, View, StyleSheet, Image, Alert, TouchableOpacity, ScrollView } from 'react-native';
 import React, { useState } from 'react';
+import { StackActions } from '@react-navigation/native';
 import { ButtonMain, ButtonSecond, FormText, FormPassword, TextLink } from '../../components/atomics';
 
 export default function Login({ navigation }) {
@@ -7,11 +8,14 @@ export default function Login({ navigation }) {
   const [password, setPassword] = useState('');
 
   const handleLogin = () => {
-    setTimeout(() => {
+    if (username === "" && password === "") {
       Alert.alert('Login Successful', 'Welcome!');
-      navigation.navigate('Home');
-    }, 1000)
+      navigation.dispatch(
+        StackActions.replace('Home'));
 
+    } else {
+      Alert.alert('Login Failed');
+    }
   };
 
   return (
@@ -56,8 +60,6 @@ export default function Login({ navigation }) {
     </ScrollView >
   )
 }
-
-
 
 const styles = StyleSheet.create({
   container: {
